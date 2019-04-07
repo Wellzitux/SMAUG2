@@ -1,12 +1,11 @@
 
 public class Genes extends javax.swing.JFrame {
 
-  
     public Genes() {
         initComponents();
     }
-  // Codigo     'sujo' criado a partir das criações dos botoes    
-  
+    // Codigo     'sujo' criado a partir das criações dos botoes    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -30,6 +29,11 @@ public class Genes extends javax.swing.JFrame {
         btnSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSairMouseClicked(evt);
+            }
+        });
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
             }
         });
 
@@ -68,28 +72,41 @@ public class Genes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnStartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStartMouseClicked
-        // Clicando no start abra o formulario Jogo_Inicial
-        new Jogo_Inicial().setVisible(true);
-        
+        // Clicando no start sera invocado o metodo limpa_Tela e teremos a tela do jogo
+        limpar_Tela();
+
     }//GEN-LAST:event_btnStartMouseClicked
+    // Metodo  limpa_Tela , esse metodo ira deixar invisivel os botoes e lbls
+
+    private void limpar_Tela() {
+        btnStart.setVisible(false);
+        btnSair.setVisible(false);
+        lblNome_Jogo.setVisible(false);
+
+    }
 
     private void btnSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSairMouseClicked
         // ainda vou configurar o botao para fechar o formulario
 
-           
+
     }//GEN-LAST:event_btnSairMouseClicked
 
-   
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // Ao clicar no botao SAIR ira fechar a aplicação usando o metodo dispose(); do java
+
+        dispose();
+
+    }//GEN-LAST:event_btnSairActionPerformed
+
     public static void main(String args[]) { //Main
-     
+
         java.awt.EventQueue.invokeLater(new Runnable() { //Metodo que extends de uma Thread
             public void run() {
                 new Genes().setVisible(true);
             }
-            
-      
-            
+
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
